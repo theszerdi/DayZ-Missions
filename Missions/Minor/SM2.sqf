@@ -1,4 +1,4 @@
-//Landing party sidemission
+//Landing party sidemission by TheSzerdi with credit to TAW_Tonic
 private ["_coord1","_coord2","_coord3","_coords","_wait","_dummymarker"];
 _wait = [600,300] call fnc_hTime;
 sleep _wait;
