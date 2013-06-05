@@ -1,4 +1,4 @@
-//Axe murderer script
+//Axe murderer script by TheSzerdi with credit to TAW_Tonic
 
 private ["_coords","_wait","_dummymarker","_grouparray","_group"];
 _wait = [600,300] call fnc_hTime;
