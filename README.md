@@ -1,6 +1,6 @@
 DayZ-Missions
 =============
-In your server.pbo:
+<b>In your server.pbo:</b>
 
 Add to server_functions.sqf place compile near beginning and if (isServer) near end:
 
@@ -24,7 +24,9 @@ Change line in server_cleanup.fsm around line 349 in the Check for Hacker sectio
 IF YOU HAVE SARGE AI INSTALLED YOU NEED TO CHANGE THE VEHICLE VARIABLE IN EACH MISSION TO "SARGE" INSTEAD OF USING "MISSIONS"
 
 
-In your mission.pbo:
+<b>In your mission.pbo:</b>
+
+Download http://all.quixoticfolly.com/hillbilly.ogg and place it in the root of your mission.pbo
 
 In your description.ext paste this at end:
 
@@ -40,6 +42,7 @@ In your description.ext paste this at end:
       };
     };
 
+<b>Other stuff:</b>
 
 In the Missions\Minor\SM3.sqf you must specify your own coords for the NPC's/PBX to spawn and the landing point on beach. Coords used are for Namalsk only.
 
