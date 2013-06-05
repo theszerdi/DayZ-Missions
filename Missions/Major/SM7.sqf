@@ -1,4 +1,4 @@
-//Special weapons squad script
+//Special weapons squad script by TheSzerdi with credit to TAW_Tonic
 
 private ["_coords","_dummymarker","_wait"];
 _wait = [2000,650] call fnc_hTime;
