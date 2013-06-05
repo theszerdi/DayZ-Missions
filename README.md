@@ -1,5 +1,8 @@
 DayZ-Missions
 =============
+
+<h3>This has only been tested on Namalsk. You <i>will</i> have errors. Good luck.</h3>
+
 <b>In your server.pbo:</b>
 
 Add to server_functions.sqf place compile near beginning and if (isServer) near end:
