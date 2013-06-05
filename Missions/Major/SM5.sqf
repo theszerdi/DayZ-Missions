@@ -1,4 +1,4 @@
-//Humvee Mission
+//Humvee Mission by TheSzerdi with credit to TAW_Tonic
 private ["_coords","_dummymarker","_chopper","_wait"];
 _wait = [2000,650] call fnc_hTime;
 sleep _wait;
