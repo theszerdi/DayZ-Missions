@@ -1,3 +1,4 @@
+//Hillbilly mission  by TheSzerdi with credit to TAW_Tonic
 private ["_coords","_iArray","_nearby","_index","_num","_itemType","_itemChance","_weights","_wait","_dummymarker","_nul"];
 _wait = [600,300] call fnc_hTime;
 sleep _wait;
