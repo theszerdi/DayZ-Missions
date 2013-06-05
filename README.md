@@ -46,19 +46,13 @@ In your description.ext paste this at end:
       };
     };
 
-<b>Other stuff:</b>
-
-In the Missions\Minor\SM3.sqf you must specify your own coords for the NPC's/PBX to spawn and the landing point on beach. Coords used are for Namalsk only.
-
-In the createvehicle.txt comment out the SMAW lines and the Mine lines.
-
 The AI require faction settings. If you have SARGE AI you're good to go. Otherwise add faction.sqf to your mission.pbo and add this line to your init.sqf:
 
     [] execVM "faction.sqf";
 
 If your map does not have a marker named "Center" in the middle of map you must add one to the mission.sqm in the mission.pbo
 
-    	class Markers
+        class Markers
     	{
     		items=7;
     		class Item0
@@ -67,3 +61,10 @@ If your map does not have a marker named "Center" in the middle of map you must 
     			name="center";
     			type="Empty";
       	  };
+
+
+<b>Other stuff:</b>
+
+In the Missions\Minor\SM3.sqf you must specify your own coords for the NPC's/PBX to spawn and the landing point on beach. Coords used are for Namalsk only.
+
+In the createvehicle.txt comment out the SMAW lines and the Mine lines.
