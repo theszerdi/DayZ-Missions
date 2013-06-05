@@ -11,7 +11,7 @@ Add to server_functions.sqf place compile near beginning and if (isServer) near 
     fnc_hTime = compile preprocessFile "\z\addons\dayz_server\Missions\misc\fnc_hTime.sqf"; //Random integer selector for mission wait time
     if (isServer) then { 
       SMarray = ["SM1","SM2","SM3","SM4","SM5","SM6","SM7"];
-    	[] execVM "\z\addons\dayz_server\missions\Major\SMfinder.sqf"; //Starts major mission system
+        [] execVM "\z\addons\dayz_server\missions\Major\SMfinder.sqf"; //Starts major mission system
     	SMarray2 = ["SM1","SM2","SM3","SM4","SM5","SM6","SM7"];
     	[] execVM "\z\addons\dayz_server\missions\Minor\SMfinder.sqf"; //Starts minor mission system
     };
@@ -25,7 +25,7 @@ Change line in server_cleanup.fsm around line 349 in the Check for Hacker sectio
 
     if(vehicle _x != _x && (vehicle _x getVariable [""Mission"",0] != 1) && !(vehicle _x in _safety) && (typeOf vehicle _x) != ""ParachuteWest"") then {" \n
 
-IF YOU HAVE SARGE AI INSTALLED YOU NEED TO CHANGE THE VEHICLE VARIABLE IN EACH MISSION TO "SARGE" INSTEAD OF USING "MISSIONS"
+IF YOU HAVE SARGE AI INSTALLED YOU NEED TO CHANGE THE VEHICLE VARIABLE IN EACH MISSION TO "SARGE" INSTEAD OF USING "MISSIONS" (Not tested with SARGE AI, may be incompatible.)
 
 
 <b>In your mission.pbo:</b>
@@ -51,6 +51,10 @@ In your description.ext paste this at end:
 In the Missions\Minor\SM3.sqf you must specify your own coords for the NPC's/PBX to spawn and the landing point on beach. Coords used are for Namalsk only.
 
 In the createvehicle.txt comment out the SMAW lines and the Mine lines.
+
+The AI require faction settings. If you have SARGE AI you're good to go. Otherwise add faction.sqf to your mission.pbo and add this line to your init.sqf:
+
+    [] execVM "faction.sqf";
 
 If your map does not have a marker named "Center" in the middle of map you must add one to the mission.sqm in the mission.pbo
 
