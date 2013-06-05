@@ -2,8 +2,7 @@ DayZ-Missions by TheSzerdi
 =============
 
 <h3>This has only been tested on Namalsk. You <i>will</i> have errors. Good luck.</h3>
-
-<h4>I can tell you right off you need to customize the weapons loadouts for the NPC's and fillBoxes.sqf</h4>
+<h4>I can tell you right off you need to customize the weapons loadouts for the NPC's and fillBoxes.sqf   Also, you may need to change which vehicles spawn for major missions SM4, SM5, and SM6</h4>
 
 <b>In your server.pbo:</b>
 
