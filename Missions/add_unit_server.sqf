@@ -2,7 +2,7 @@
 private ["_aiunit","_xpos","_ypos","_unitpos","_aiGroup","_wppos","_wpradius","_wpnum","_levelnum","_numunits","_rndLOut","_ailoadout","_wp","_aispawnpos","_aiwep1","_aiammo1","_aiwep2","_aiammo2"];
  
     _aiunit = objNull;
-    _aiGroup = createGroup resistance;
+    _aiGroup = createGroup east;
     _aispawnpos =_this select 0;
     _wpradius = _this select 1;
     _wpnum = _this select 2;
