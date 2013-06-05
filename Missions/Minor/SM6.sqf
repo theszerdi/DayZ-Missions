@@ -1,4 +1,4 @@
-//ural wreck Mission
+//ural wreck Mission by TheSzerdi with credit to TAW_Tonic
 private ["_coords","_itemType","_itemChance","_weights","_index","_iArray","_num","_nearby","_checking","_people","_wait","_dummymarker"];
 _wait = [600,300] call fnc_hTime;
 sleep _wait;
