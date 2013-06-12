@@ -6,6 +6,8 @@ DayZ-Missions by TheSzerdi
 
 <b>In your server.pbo:</b>
 
+THE MISSIONS FOLDER GOES IN YOUR SERVER.PBO
+
 Add to server_functions.sqf place compile near beginning and if (isServer) near end:
 
     fnc_hTime = compile preprocessFile "\z\addons\dayz_server\Missions\misc\fnc_hTime.sqf"; //Random integer selector for mission wait time
