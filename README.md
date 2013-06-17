@@ -32,6 +32,8 @@ IF YOU HAVE SARGE AI INSTALLED YOU NEED TO CHANGE THE VEHICLE VARIABLE IN EACH M
 
 Download http://all.quixoticfolly.com/hillbilly.ogg and place it in the root of your mission.pbo
 
+This isn't working yet. If you figure it out, let me know. admin@quixoticfolly.com
+
 In your description.ext paste this at end:
 
     class CfgSounds
