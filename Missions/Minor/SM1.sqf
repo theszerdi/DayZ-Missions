@@ -8,7 +8,7 @@ sleep _wait;
 [nil,nil,rGlobalRadio,"A sniper team has been spotted!"] call RE;
 [nil,nil,rHINT,"A sniper team has been spotted!"] call RE;
 
-_coords = [getMarkerPos "center",0,12000,2,0,2000,0] call BIS_fnc_findSafePos;
+_coords = [getMarkerPos "center",0,4000,2,0,2000,0] call BIS_fnc_findSafePos;
 
 _dummymarker = createMarker["Sniper Team", _coords];
 _dummymarker setMarkerColor "ColorRed";

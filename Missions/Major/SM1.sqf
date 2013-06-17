@@ -8,7 +8,7 @@ sleep _wait;
 [nil,nil,rGlobalRadio,"A gear cache has been airdropped! Secure it for yourself!"] call RE;
 [nil,nil,rHINT,"A gear cache has been airdropped! Secure it for yourself!"] call RE;
 
-_coords = [getMarkerPos "center",0,12000,30,0,2000,0] call BIS_fnc_findSafePos;
+_coords = [getMarkerPos "center",0,4000,30,0,2000,0] call BIS_fnc_findSafePos;
 
 _dummymarker = createMarker["STR_MISSION_MARKER_1", _coords];
 _dummymarker setMarkerColor "ColorGreen";

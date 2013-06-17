@@ -8,7 +8,7 @@ sleep _wait;
 [nil,nil,rGlobalRadio,"A psychotic axe murderer has escaped from the hospital!"] call RE;
 [nil,nil,rHINT,"A psychotic axe murderer has escaped from the hospital!"] call RE;
 
-_coords = [getMarkerPos "center",0,12000,5,0,2000,0] call BIS_fnc_findSafePos;
+_coords = [getMarkerPos "center",0,4000,5,0,2000,0] call BIS_fnc_findSafePos;
 
 _dummymarker = createMarker["Axe Murderer", _coords];
 _dummymarker setMarkerColor "ColorRed";

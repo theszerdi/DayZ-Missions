@@ -2,11 +2,11 @@
 private ["_coords","_iArray","_nearby","_index","_num","_itemType","_itemChance","_weights","_wait","_dummymarker","_nul"];
 _wait = [600,300] call fnc_hTime;
 sleep _wait;
-[nil,nil,rTitleText,"Hillbillies have moved into the area!", "PLAIN",6] call RE;
-[nil,nil,rGlobalRadio,"Hillbillies have moved into the area!"] call RE;
-[nil,nil,rHINT,"Hillbillies have moved into the area!"] call RE;
+[nil,nil,rTitleText,"A group of survivors have set up a homestead!", "PLAIN",6] call RE;
+[nil,nil,rGlobalRadio,"A group of survivors have set up a homestead!"] call RE;
+[nil,nil,rHINT,"A group of survivors have set up a homestead!"] call RE;
 
-_coords =  [getMarkerPos "center",0,12000,10,0,20,0] call BIS_fnc_findSafePos;
+_coords =  [getMarkerPos "center",0,4000,10,0,20,0] call BIS_fnc_findSafePos;
 
 _dummymarker = createMarker["Rednecks", _coords];
 _dummymarker setMarkerColor "ColorRed";
@@ -14,9 +14,9 @@ _dummymarker setMarkerShape "ELLIPSE";
 _dummymarker setMarkerBrush "Grid";
 _dummymarker setMarkerSize [75,75];
 
-baserunover = createVehicle ["land_housev_1i4",[(_coords select 0) +2, (_coords select 1)+5,-0.3],[], 0, "CAN_COLLIDE"];
-baserunover2 = createVehicle ["land_kbud",[(_coords select 0) - 10, (_coords select 1) - 5,0],[], 0, "CAN_COLLIDE"];
-baserunover3 = createVehicle ["land_kbud",[(_coords select 0) - 7, (_coords select 1) - 5,0],[], 0, "CAN_COLLIDE"];
+baserunover = createVehicle ["Land_HouseV_1I3",[(_coords select 0) +2, (_coords select 1)+5,-0.3],[], 0, "CAN_COLLIDE"];
+baserunover2 = createVehicle ["Land_hut06",[(_coords select 0) - 10, (_coords select 1) - 5,0],[], 0, "CAN_COLLIDE"];
+baserunover3 = createVehicle ["Land_hut06",[(_coords select 0) - 7, (_coords select 1) - 5,0],[], 0, "CAN_COLLIDE"];
 
 [[(_coords select 0) - 20, (_coords select 1) - 15,0],40,4,2,0] execVM "\z\addons\dayz_server\missions\add_unit_server2.sqf";//AI Guards
 sleep 3;
@@ -25,9 +25,11 @@ sleep 3;
 
 if (isDedicated) then {
 
-  _num = round(random 5) + 1;
-	_itemType =		[["FN_FAL", "weapon"], ["bizon_silenced", "weapon"], ["M14_EP1", "weapon"], ["BAF_AS50_scoped", "weapon"], ["MakarovSD", "weapon"], ["Mk_48_DZ", "weapon"], ["M249_DZ", "weapon"], ["DMR", "weapon"], ["", "military"], ["", "medical"], ["MedBox0", "object"], ["NVGoggles", "weapon"], ["AmmoBoxSmall_556", "object"], ["AmmoBoxSmall_762", "object"], ["Skin_CamoWinter_DZN", "magazine"], ["Skin_CamoWinterW_DZN", "magazine"], ["Skin_Sniper1_DZ", "magazine"], ["Skin_Sniper1W_DZN", "magazine"]];
-	_itemChance =	[0.02,					 0.05,							 0.05, 					0.01, 				0.03, 						0.02, 					0.03, 				0.05, 				0.1, 				0.1, 			0.2, 						0.07, 					0.01, 							0.01, 							0.08, 								0.05, 								0.08, 								0.05];
+  _num = round(random 5) + 3;
+	_itemType =		[["M4SPR", "weapon"], ["M4A1_RCO_GL", "weapon"], ["M24_des_EP1", "weapon"], ["G36_C_SD_camo", "weapon"], ["MakarovSD", "weapon"], ["Mk_48_DZ", "weapon"], ["M249_EP1", "weapon"], ["DMR", "weapon"], ["", "military"], ["", "medical"], ["MedBox0", "object"], ["NVGoggles", "weapon"], ["AmmoBoxSmall_556", "object"], ["AmmoBoxSmall_762", "object"], ["Skin_Camo1_DZ", "magazine"], ["Skin_Sniper1_DZ", "magazine"]];
+	_itemChance =	[0.02,					 0.05,							 0.05, 					0.01, 				0.03, 						0.02, 					0.03, 				0.05, 				0.1, 				0.1, 			0.2, 						0.07, 					0.01, 							0.01, 							0.08, 								0.05];
+	
+	
 	
 	waituntil {!isnil "fnc_buildWeightedArray"};
 	
@@ -59,9 +61,9 @@ if ({isPlayer _x && _x distance baserunover < 200  } count playableunits > 0) th
 
 waitUntil{{isPlayer _x && _x distance baserunover < 20  } count playableunits > 0}; 
 
-[nil,nil,rTitleText,"You survived the rape attempt! Loot their corpses!", "PLAIN",6] call RE;
-[nil,nil,rGlobalRadio,"You survived the rape attempt! Loot their corpses!"] call RE;
-[nil,nil,rHINT,"You survived the rape attempt! Loot their corpses!"] call RE;
+[nil,nil,rTitleText,"You wiped them out! Loot their corpses!", "PLAIN",6] call RE;
+[nil,nil,rGlobalRadio,"You wiped them out! Loot their corpses!"] call RE;
+[nil,nil,rHINT,"You wiped them out! Loot their corpses!"] call RE;
 
 deleteMarker _dummymarker;
 

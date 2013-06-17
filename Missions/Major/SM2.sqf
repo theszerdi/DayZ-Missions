@@ -6,7 +6,7 @@ sleep _wait;
 [nil,nil,rGlobalRadio,"A C-130 has crash landed! Secure it's cargo for yourself!"] call RE;
 [nil,nil,rHINT,"A C-130 has crash landed! Secure it's cargo for yourself!"] call RE;
 
-_coords = [getMarkerPos "center",0,12000,100,0,20,0] call BIS_fnc_findSafePos;
+_coords = [getMarkerPos "center",0,6000,100,0,20,0] call BIS_fnc_findSafePos;
 
 _dummymarker = createMarker["STR_MISSION_MARKER_2", _coords];
 _dummymarker setMarkerColor "ColorGreen";

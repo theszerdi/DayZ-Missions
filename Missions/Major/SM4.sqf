@@ -6,7 +6,7 @@ sleep _wait;
 [nil,nil,rGlobalRadio,"A helicopter has crash landed! Secure it's firepower for yourself!"] call RE;
 [nil,nil,rHINT,"A helicopter has crash landed! Secure it's firepower for yourself!"] call RE;
 
-_coords = [getMarkerPos "center",0,12000,30,0,20,0] call BIS_fnc_findSafePos;
+_coords = [getMarkerPos "center",0,6000,30,0,20,0] call BIS_fnc_findSafePos;
 
 _dummymarker = createMarker["STR_MISSION_MARKER_4", _coords];
 _dummymarker setMarkerColor "ColorGreen";
@@ -14,7 +14,7 @@ _dummymarker setMarkerShape "ELLIPSE";
 _dummymarker setMarkerBrush "Grid";
 _dummymarker setMarkerSize [150,150];
 
-_chopper = ["AH64D_EP1","Ka60_GL_NAC","AH1Z"] call BIS_fnc_selectRandom;
+_chopper = ["UH1H_DZ","Mi17_DZ"] call BIS_fnc_selectRandom;
 
 hueychop = createVehicle [_chopper,_coords,[], 0, "NONE"];
 hueychop setVariable ["Mission",1,true];

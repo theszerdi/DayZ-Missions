@@ -6,7 +6,7 @@ sleep _wait;
 [nil,nil,rGlobalRadio,"A humvee has crashed! Kill any survivors and secure the loot!"] call RE;
 [nil,nil,rHINT,"A humvee has crashed! Kill any survivors and secure the loot!"] call RE;
 
-_coords =  [getMarkerPos "center",0,12000,10,0,2000,0] call BIS_fnc_findSafePos;
+_coords =  [getMarkerPos "center",0,4000,10,0,2000,0] call BIS_fnc_findSafePos;
 
 _dummymarker = createMarker["Humvee Wreck", _coords];
 _dummymarker setMarkerColor "ColorRed";
@@ -22,9 +22,11 @@ sleep 1;
 
 if (isDedicated) then {
 
-  _num = round(random 5) + 1;
-	_itemType =		[["FN_FAL", "weapon"], ["bizon_silenced", "weapon"], ["M14_EP1", "weapon"], ["BAF_AS50_scoped", "weapon"], ["MakarovSD", "weapon"], ["Mk_48_DZ", "weapon"], ["M249_DZ", "weapon"], ["DMR", "weapon"], ["", "military"], ["", "medical"], ["MedBox0", "object"], ["NVGoggles", "weapon"], ["AmmoBoxSmall_556", "object"], ["AmmoBoxSmall_762", "object"], ["Skin_CamoWinter_DZN", "magazine"], ["Skin_CamoWinterW_DZN", "magazine"], ["Skin_Sniper1_DZ", "magazine"], ["Skin_Sniper1W_DZN", "magazine"]];
-	_itemChance =	[0.02,					 0.05,							 0.05, 					0.01, 				0.03, 						0.02, 					0.03, 				0.05, 				0.1, 				0.1, 			0.2, 						0.07, 					0.01, 							0.01, 							0.08, 								0.05, 								0.08, 								0.05];
+  _num = round(random 5) + 3;
+	_itemType =		[["M4SPR", "weapon"], ["M4A1_RCO_GL", "weapon"], ["M24_des_EP1", "weapon"], ["G36_C_SD_camo", "weapon"], ["MakarovSD", "weapon"], ["Mk_48_DZ", "weapon"], ["M249_EP1", "weapon"], ["DMR", "weapon"], ["", "military"], ["", "medical"], ["MedBox0", "object"], ["NVGoggles", "weapon"], ["AmmoBoxSmall_556", "object"], ["AmmoBoxSmall_762", "object"], ["Skin_Camo1_DZ", "magazine"], ["Skin_Sniper1_DZ", "magazine"]];
+	_itemChance =	[0.02,					 0.05,							 0.05, 					0.01, 				0.03, 						0.02, 					0.03, 				0.05, 				0.1, 				0.1, 			0.2, 						0.07, 					0.01, 							0.01, 							0.08, 								0.05];
+	
+	
 	
 	waituntil {!isnil "fnc_buildWeightedArray"};
 	

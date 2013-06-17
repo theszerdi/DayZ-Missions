@@ -7,9 +7,9 @@ sleep _wait;
 [nil,nil,rHINT,"A landing party is establishing a beachhead!"] call RE;
 
 //YOU MUST SPECIFY A SPAWN COORD AND A BEACH COORD FOR EACH ARRAY FOR YOUR MAP
-_coord1 = [[5277.4878,4246.8672,0],[5270.9004,5645.5161,0]];
-_coord2 = [[2040.6782,9746.2754,0],[3415.792,8712.3867,0]];
-_coord3 = [[10440.379,8823.4355,0],[8126.8584,8815.1523,0]];
+_coord1 = [[1203.32,2280.92,0],[1203.32,2280.92,0]];
+_coord2 = [[8185.9,2767.72,0],[8185.9,2767.72,0]];
+_coord3 = [[13231.3,7369.12,0],[13231.3,7369.12,0]];
 
 _coords = [_coord1, _coord2, _coord3] call BIS_fnc_selectRandom;
 
@@ -44,9 +44,9 @@ tentloot addWeaponCargoGlobal ["ItemKnife", 2];
 tentloot addWeaponCargoGlobal ["ItemToolbox", 2];
 tentloot addWeaponCargoGlobal ["ItemMatches", 2];
 tentloot addMagazineCargoGlobal ["ItemBloodbag", 1];
-tentloot addMagazineCargoGlobal ["Skin_CamoWinter_DZN", 1];
+tentloot addMagazineCargoGlobal ["Skin_Camo1_DZ", 1];
 tentloot addMagazineCargoGlobal ["Skin_Sniper1_DZ", 1];
-tentloot addBackpackCargoGlobal ["BAF_AssaultPack_DZN",2];
+tentloot addBackpackCargoGlobal ["DZ_Backpack_EP1",2];
 tentloot addMagazineCargoGlobal ["ItemJerryCan",2];
 
 
