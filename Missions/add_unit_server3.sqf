@@ -67,7 +67,7 @@ private ["_aiunit","_xpos","_ypos","_unitpos","_aiGroup","_levelnum","_numunits"
             if ((x == 2) || (x == 3)) then //troops sergeant
             {
                 "BAF_Soldier_L_DDPM" createUnit [_unitpos, LandingParty, "_aiunit=this;",1,"SERGEANT"];
-                _rndLOut=floor(random 3);
+                _rndLOut=floor(random 2);
                 _ailoadout=
                 switch (_rndLOut) do
                 {
