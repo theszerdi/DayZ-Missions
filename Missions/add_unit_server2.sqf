@@ -56,7 +56,7 @@ private ["_aiunit","_xpos","_ypos","_unitpos","_aiGroup","_wppos","_wpradius","_
             {
                 "BAF_Soldier_Sniper_MTP" createUnit [_unitpos, SniperTeam, "_aiunit=this;",1,"LIEUTENANT"];
          
-                _rndLOut=floor(random 4);
+                _rndLOut=floor(random 7);
                 _ailoadout=
                 switch (_rndLOut) do
                 {
@@ -73,7 +73,7 @@ private ["_aiunit","_xpos","_ypos","_unitpos","_aiGroup","_wppos","_wpradius","_
             {
                 "BAF_Soldier_Sniper_MTP" createUnit [_unitpos, SniperTeam, "_aiunit=this;",1,"SERGEANT"];
          
-                _rndLOut=floor(random 4);
+                _rndLOut=floor(random 2);
                 _ailoadout=
                 switch (_rndLOut) do
                 {
