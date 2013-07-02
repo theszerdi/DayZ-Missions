@@ -1,7 +1,7 @@
 DayZ-Missions by TheSzerdi
 =============
 
-<h3>This version edited by lazyink for Chernarus. It <i>should</i> work. Good luck.</h3>
+<h3>This version tested only on Namalsk 0.741. It <i>should</i> work. Good luck.</h3>
 <h4>You may need to customize the weapons loadouts for the NPC's and fillBoxes.sqf -- Also, you may need to change which vehicles spawn for major missions SM4, SM5, and SM6</h4>
 
 <b>In your server.pbo:</b>
@@ -30,9 +30,9 @@ IF YOU HAVE SARGE AI INSTALLED YOU NEED TO CHANGE THE VEHICLE VARIABLE IN EACH M
 
 <b>In your mission.pbo:</b>
 
-Download http://all.quixoticfolly.com/hillbilly.ogg and place it in the root of your mission.pbo
+Add the debug folder and all associated files.
 
-This isn't working yet. If you figure it out, let me know. admin@quixoticfolly.com
+Download http://all.quixoticfolly.com/hillbilly.ogg and place it in the debug folder also.
 
 In your description.ext paste this at end:
 
