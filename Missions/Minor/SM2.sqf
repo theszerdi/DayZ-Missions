@@ -1,7 +1,7 @@
-//Landing party sidemission by TheSzerdi with credit to TAW_Tonic
+//Landing party sidemission Created by TheSzerdi Edited by Falcyn [QF]
 private ["_coord1","_coord2","_coord3","_coords","_wait","_dummymarker"];
-_wait = [600,300] call fnc_hTime;
-sleep _wait;
+[] execVM "\z\addons\dayz_server\Missions\SMGoMinor.sqf";
+WaitUntil {MissionGoMinor == 1};
 [nil,nil,rTitleText,"A landing party is establishing a beachhead!", "PLAIN",6] call RE;
 [nil,nil,rGlobalRadio,"A landing party is establishing a beachhead!"] call RE;
 [nil,nil,rHINT,"A landing party is establishing a beachhead!"] call RE;
@@ -13,18 +13,16 @@ _coord3 = [[10440.379,8823.4355,0],[8126.8584,8815.1523,0]];
 
 _coords = [_coord1, _coord2, _coord3] call BIS_fnc_selectRandom;
 
-_dummymarker = createMarker["Landing Party", _coords select 1];
-_dummymarker setMarkerColor "ColorRed";
-_dummymarker setMarkerShape "ELLIPSE";
-_dummymarker setMarkerBrush "Grid";
-_dummymarker setMarkerSize [75,75];
+MCoords = _coords select 1;
+publicVariable "MCoords";
+[] execVM "debug\addmarkers75.sqf";
 
 pbxride = createVehicle ["PBX",_coords select 0,[], 0, "NONE"];
 pbxride setVariable ["Mission",1,true];
 pbxride setFuel 1;
 
 [_coords select 0,4,1] execVM "\z\addons\dayz_server\missions\add_unit_server3.sqf";//AI Guards
-sleep 1;
+sleep 3;
 LandingParty addVehicle pbxride;
 LandingParty move (_coords select 1);
 waitUntil{(pbxride distance (_coords select 1)) < 50}; 
@@ -52,7 +50,10 @@ tentloot addMagazineCargoGlobal ["ItemJerryCan",2];
 
 waitUntil{{isPlayer _x && _x distance tentloot < 10  } count playableunits > 0}; 
 
-deleteMarker _dummymarker;
+[] execVM "debug\remmarkers75.sqf";
+MissionGoMinor = 0;
+MCoords = 0;
+publicVariable "MCoords";
 
 [nil,nil,rTitleText,"You've secured the beachhead! Good work.", "PLAIN",6] call RE;
 [nil,nil,rGlobalRadio,"You've secured the beachhead! Good work."] call RE;

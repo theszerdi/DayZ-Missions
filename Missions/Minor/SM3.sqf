@@ -1,18 +1,16 @@
-//Hillbilly mission  by TheSzerdi with credit to TAW_Tonic
-private ["_coords","_iArray","_nearby","_index","_num","_itemType","_itemChance","_weights","_wait","_dummymarker","_nul"];
-_wait = [600,300] call fnc_hTime;
-sleep _wait;
+//Hillbilly mission  Created by TheSzerdi Edited by Falcyn [QF]
+private ["_coords","_iArray","_nearby","_index","_num","_itemType","_itemChance","_weights","_wait","_dummymarker"];
+[] execVM "\z\addons\dayz_server\Missions\SMGoMinor.sqf";
+WaitUntil {MissionGoMinor == 1};
+publicVariable "MissionGoMinor";
+_coords =  [getMarkerPos "center",0,7000,10,0,20,0] call BIS_fnc_findSafePos;
 [nil,nil,rTitleText,"Hillbillies have moved into the area!", "PLAIN",6] call RE;
 [nil,nil,rGlobalRadio,"Hillbillies have moved into the area!"] call RE;
 [nil,nil,rHINT,"Hillbillies have moved into the area!"] call RE;
 
-_coords =  [getMarkerPos "center",0,12000,10,0,20,0] call BIS_fnc_findSafePos;
-
-_dummymarker = createMarker["Rednecks", _coords];
-_dummymarker setMarkerColor "ColorRed";
-_dummymarker setMarkerShape "ELLIPSE";
-_dummymarker setMarkerBrush "Grid";
-_dummymarker setMarkerSize [75,75];
+MCoords = _coords;
+publicVariable "MCoords";
+[] execVM "debug\addmarkers75.sqf";
 
 baserunover = createVehicle ["land_housev_1i4",[(_coords select 0) +2, (_coords select 1)+5,-0.3],[], 0, "CAN_COLLIDE"];
 baserunover2 = createVehicle ["land_kbud",[(_coords select 0) - 10, (_coords select 1) - 5,0],[], 0, "CAN_COLLIDE"];
@@ -25,9 +23,9 @@ sleep 3;
 
 if (isDedicated) then {
 
-  _num = round(random 5) + 1;
-	_itemType =		[["FN_FAL", "weapon"], ["bizon_silenced", "weapon"], ["M14_EP1", "weapon"], ["BAF_AS50_scoped", "weapon"], ["MakarovSD", "weapon"], ["Mk_48_DZ", "weapon"], ["M249_DZ", "weapon"], ["DMR", "weapon"], ["", "military"], ["", "medical"], ["MedBox0", "object"], ["NVGoggles", "weapon"], ["AmmoBoxSmall_556", "object"], ["AmmoBoxSmall_762", "object"], ["Skin_CamoWinter_DZN", "magazine"], ["Skin_CamoWinterW_DZN", "magazine"], ["Skin_Sniper1_DZ", "magazine"], ["Skin_Sniper1W_DZN", "magazine"]];
-	_itemChance =	[0.02,					 0.05,							 0.05, 					0.01, 				0.03, 						0.02, 					0.03, 				0.05, 				0.1, 				0.1, 			0.2, 						0.07, 					0.01, 							0.01, 							0.08, 								0.05, 								0.08, 								0.05];
+	_num = round(random 5) + 3;
+	_itemType =		[["SCAR_H_LNG_Sniper","magazine"], ["SCAR_H_LNG_Sniper_SD","magazine"], ["FN_FAL", "weapon"], ["bizon_silenced", "weapon"], ["M14_EP1", "weapon"], ["BAF_AS50_scoped", "weapon"], ["MakarovSD", "weapon"], ["Mk_48_DZ", "weapon"], ["M249_DZ", "weapon"], ["DMR", "weapon"], ["", "military"], ["", "medical"], ["MedBox0", "object"], ["NVGoggles", "weapon"], ["AmmoBoxSmall_556", "object"], ["AmmoBoxSmall_762", "object"], ["Skin_CamoWinter_DZN", "magazine"], ["Skin_CamoWinterW_DZN", "magazine"], ["Skin_Sniper1_DZ", "magazine"], ["Skin_Sniper1W_DZN", "magazine"]];
+	_itemChance =	[0.08, 									0.08,										0.02,					 0.05,							 0.05, 					0.01, 				0.03, 						0.02, 					0.03, 				0.05, 				0.1, 				0.1, 			0.2, 						0.07, 					0.01, 							0.01, 							0.08, 								0.05, 								0.08, 								0.05];
 	
 	waituntil {!isnil "fnc_buildWeightedArray"};
 	
@@ -52,10 +50,7 @@ if (isDedicated) then {
 	};
 };
 
-waitUntil{{isPlayer _x && _x distance baserunover < 300  } count playableunits > 0}; 
-if ({isPlayer _x && _x distance baserunover < 200  } count playableunits > 0) then {
-	_nul = [objNull, _x, rSAY, "hillbilly"] call RE; // This is a RPC sound call for the voices
-};
+[] execVM "debug\hillbilly.sqf";
 
 waitUntil{{isPlayer _x && _x distance baserunover < 20  } count playableunits > 0}; 
 
@@ -63,7 +58,11 @@ waitUntil{{isPlayer _x && _x distance baserunover < 20  } count playableunits > 
 [nil,nil,rGlobalRadio,"You survived the rape attempt! Loot their corpses!"] call RE;
 [nil,nil,rHINT,"You survived the rape attempt! Loot their corpses!"] call RE;
 
-deleteMarker _dummymarker;
+[] execVM "debug\remmarkers75.sqf";
+MissionGoMinor = 0;
+publicVariable "MissionGoMinor";
+MCoords = 0;
+publicVariable "MCoords";
 
 SM1 = 1;
 [0] execVM "\z\addons\dayz_server\missions\minor\SMfinder.sqf";

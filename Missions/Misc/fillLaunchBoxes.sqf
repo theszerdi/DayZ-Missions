@@ -1,3 +1,4 @@
+//Created by TheSzerdi
 _crate = _this select 0;
 
 clearWeaponCargoGlobal _crate;

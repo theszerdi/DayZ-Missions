@@ -1,8 +1,8 @@
-//Created by axeman Edited by TheSzerdi
+//Created by Axeman Edited by TheSzerdi
 private ["_aiunit","_xpos","_ypos","_unitpos","_aiGroup","_wppos","_wpradius","_wpnum","_levelnum","_numunits","_rndLOut","_ailoadout","_wp","_aispawnpos","_aiwep1","_aiammo1","_aiwep2","_aiammo2"];
  
     _aiunit = objNull;
-    _aiGroup = createGroup east;
+    _aiGroup = createGroup resistance;
     _aispawnpos =_this select 0;
     _wpradius = _this select 1;
     _wpnum = _this select 2;
@@ -99,7 +99,7 @@ private ["_aiunit","_xpos","_ypos","_unitpos","_aiGroup","_wppos","_wpradius","_
         _aiunit enableAI "ANIM";
         _aiunit enableAI "FSM";
         _aiunit allowDammage true;
-  	
+		
 		_aiunit addEventHandler ['killed',{_this execVM "\z\addons\dayz_server\Missions\bodyclean.sqf"}]; //Body disappear time
  
         _aiunit setCombatMode "RED";

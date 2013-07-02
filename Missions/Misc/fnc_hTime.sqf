@@ -1,5 +1,5 @@
 /*
-  @file Version: 1D
+	@file Version: 1D
 	@file name: core\misc\fnc_hTime.sqf
 	@file Author: TAW_Tonic
 	@file edit: 9/13/2012

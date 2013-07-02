@@ -1,12 +1,10 @@
 DayZ-Missions by TheSzerdi
 =============
 
-<h3>This has only been tested on Namalsk (0.741). You <i>will</i> have errors. Good luck.</h3>
-<h4>Right off you need to customize the weapons loadouts for the NPC's and fillBoxes.sqf -- Also, you may need to change which vehicles spawn for major missions SM4, SM5, and SM6</h4>
+<h3>This version edited by lazyink for Chernarus. It <i>should</i> work. Good luck.</h3>
+<h4>You may need to customize the weapons loadouts for the NPC's and fillBoxes.sqf -- Also, you may need to change which vehicles spawn for major missions SM4, SM5, and SM6</h4>
 
 <b>In your server.pbo:</b>
-
-THE MISSIONS FOLDER GOES IN YOUR SERVER.PBO
 
 Add to server_functions.sqf place compile near beginning and if (isServer) near end:
 
