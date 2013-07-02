@@ -6,15 +6,24 @@ DayZ-Missions by TheSzerdi
 
 <b>In your server.pbo:</b>
 
-Add to server_functions.sqf place compile near beginning and if (isServer) near end:
+Add the Missions folder and associated files.
+
+Add to server_functions.sqf place compile near beginning:
 
     fnc_hTime = compile preprocessFile "\z\addons\dayz_server\Missions\misc\fnc_hTime.sqf"; //Random integer selector for mission wait time
-    if (isServer) then { 
-      SMarray = ["SM1","SM2","SM3","SM4","SM5","SM6","SM7"];
-        [] execVM "\z\addons\dayz_server\missions\Major\SMfinder.sqf"; //Starts major mission system
+
+Add to server_functions.sqf near end:
+
+        //----------InitMissions--------//
+        MissionGo = 0;
+        MissionGoMinor = 0;
+        if (isServer) then { 
+        SMarray = ["SM1","SM2","SM3","SM4","SM5","SM6","SM7"];
+        [] execVM "\z\addons\dayz_server\missions\major\SMfinder.sqf"; //Starts major mission system
     	SMarray2 = ["SM1","SM2","SM3","SM4","SM5","SM6","SM7"];
-    	[] execVM "\z\addons\dayz_server\missions\Minor\SMfinder.sqf"; //Starts minor mission system
-    };
+    	[] execVM "\z\addons\dayz_server\missions\minor\SMfinder.sqf"; //Starts minor mission system
+        };
+        //---------EndInitMissions------//
 
 Add to server_updateObject.sqf place right after terms defined:
 
