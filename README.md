@@ -32,8 +32,6 @@ IF YOU HAVE SARGE AI INSTALLED YOU NEED TO CHANGE THE VEHICLE VARIABLE IN EACH M
 
 Add the debug folder and all associated files.
 
-Download http://all.quixoticfolly.com/hillbilly.ogg and place it in the debug folder also.
-
 In your description.ext paste this at end:
 
     class CfgSounds
