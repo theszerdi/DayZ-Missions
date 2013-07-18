@@ -39,6 +39,11 @@ IF YOU HAVE SARGE AI INSTALLED YOU NEED TO CHANGE THE VEHICLE VARIABLE IN EACH M
 
 <b>In your mission.pbo:</b>
 
+Add this to end:
+
+        [] execVM "debug\addmarkers.sqf";
+        [] execVM "debug\addmarkers75.sqf";
+
 Add the debug folder and all associated files.
 
 In your description.ext paste this at end:
